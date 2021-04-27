@@ -14,10 +14,7 @@
         <module>test-liquibase</module>
     </modules>
 
-    <properties>
-        <maven.compiler.source>16</maven.compiler.source>
-        <maven.compiler.target>16</maven.compiler.target>
-    </properties>
+
     <profiles>
         <profile>
             <id>dev</id>
@@ -32,6 +29,15 @@
             </properties>
         </profile>
     </profiles>
+
+    <properties>
+        <maven.compiler.source>16</maven.compiler.source>
+        <maven.compiler.target>16</maven.compiler.target>
+        <database.url>jdbc:mysql://localhost:3307</database.url>
+        <database.user>root</database.user>
+        <database.password>password</database.password>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>mysql</groupId>
