@@ -1,5 +1,6 @@
 create table test
 (
-    id bigint primary key,
-    first varchar(50)
+    id bigint AUTO_INCREMENT,
+    first varchar(50),
+    PRIMARY KEY (id)
 )

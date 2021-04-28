@@ -33,9 +33,9 @@
     <properties>
         <maven.compiler.source>16</maven.compiler.source>
         <maven.compiler.target>16</maven.compiler.target>
-        <database.url>jdbc:mysql://localhost:3307</database.url>
-        <database.user>root</database.user>
-        <database.password>password</database.password>
+        <spring.datasource.url>jdbc:mysql://localhost:3307</spring.datasource.url>
+        <spring.datasource.username>root</spring.datasource.username>
+        <spring.datasource.password>password</spring.datasource.password>
     </properties>
 
     <dependencies>

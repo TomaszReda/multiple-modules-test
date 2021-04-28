@@ -5,10 +5,16 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
-    <changeSet author="treda" id="01_test_create_table">
+    <changeSet author="treda" id="01_test_create_table" context="main">
         <sqlFile path="01_test_create_table.sql" relativeToChangelogFile="true"/>
         <rollback>
             <sqlFile path="01_test_create_table_rollback.sql" relativeToChangelogFile="true"/>
+        </rollback>
+    </changeSet>
+    <changeSet author="treda" id="01_test_data" context="test">
+        <sqlFile path="/test/01_test_data.sql" relativeToChangelogFile="true"/>
+        <rollback>
+            <sqlFile path="/test/01_test_data_rollback.sql" relativeToChangelogFile="true"/>
         </rollback>
     </changeSet>
 </databaseChangeLog>

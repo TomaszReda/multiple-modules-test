@@ -10,10 +10,24 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/test-liquibase/src/main/resources/db/1.0/test/01_test_data.sql">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/test-liquibase/src/main/resources/liquibase.properties">
           <value>
             <Attribute>
               <option name="separator" value=":" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="8502c0ae-3f62-49d3-8d00-7047d69cf464/schema/test/table/test.sql">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
             </Attribute>
           </value>
         </entry>
