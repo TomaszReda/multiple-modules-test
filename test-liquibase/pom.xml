@@ -61,7 +61,7 @@
                 <version>3.5.3</version>
                 <configuration>
                     <propertyFileWillOverride>true</propertyFileWillOverride>
-                    <changeLogFile>src/main/resources/db/changelog-master.xml</changeLogFile>
+                    <changeLogFile>src/main/resources/changelog-master.xml</changeLogFile>
                     <driver>${spring.datasource.driver-class-name}</driver>
                     <url>${spring.datasource.url}</url>
                     <username>${spring.datasource.username}</username>

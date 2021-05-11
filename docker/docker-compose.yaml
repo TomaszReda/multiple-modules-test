@@ -26,7 +26,7 @@ services:
       - db-test
     container_name: db-liquibase
     environment:
-      - LIQUIBASE_URL=jdbc:mysql://localhost:3306/db-test?verifyServerCertificate=false&useSSL=false&allowPublicKeyRetrieval=true
+      - LIQUIBASE_URL=jdbc:mysql://db-test:3306/db-test
       - LIQUIBASE_USERNAME=test
       - LIQUIBASE_PASSWORD=test
       - LIQUIBASE_DRIVER=com.mysql.cj.jdbc.Driver
