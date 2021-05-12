@@ -1,16 +1,34 @@
 version: '3.3'
 services:
+  services:
+    app:
+      build:
+        context: ../
+        dockerfile: ./docker/Dockerfile
+      network_mode: bridge
+      container_name: app_test
+      expose:
+        - 8080
+      ports:
+        - 8080:8080
+      environment:
+        - SPRING_DATASOURCE_URL=jdbc:mysql://db-test:3306/db-test
+        - SPRING_DATASOURCE_USERNAME=test
+        - SPRING_DATASOURCE_PASSWORD=test
+      restart: unless-stopped
+      depends_on:
+        - db-test
   db-test:
     image: mysql:5.7
     restart: always
     environment:
-        MYSQL_ROOT_PASSWORD: 'password'
-        MYSQL_DATABASE: 'db-test'
-        MYSQL_USER: 'test'
-        MYSQL_PASSWORD: 'test'
-#    command: [ 'mysqld','--init-file=/docker/database/install_db.sql','--log-bin-trust-function-creators=TRUE',"--explicit_defaults_for_timestamp", "--character-set-server=utf8mb4", "--collation-server=utf8mb4_unicode_ci"]
-#    volumes:
-#      - ./database:/docker/database
+      MYSQL_ROOT_PASSWORD: 'password'
+      MYSQL_DATABASE: 'db-test'
+      MYSQL_USER: 'test'
+      MYSQL_PASSWORD: 'test'
+    #    command: [ 'mysqld','--init-file=/docker/database/install_db.sql','--log-bin-trust-function-creators=TRUE',"--explicit_defaults_for_timestamp", "--character-set-server=utf8mb4", "--collation-server=utf8mb4_unicode_ci"]
+    #    volumes:
+    #      - ./database:/docker/database
     ports:
       - '3306:3306'
     networks:
