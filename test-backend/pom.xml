@@ -15,6 +15,8 @@
     <description>Demo project for Spring Boot</description>
     <properties>
         <java.version>16</java.version>
+            <angular.project.location>test-frontend</angular.project.location>
+            <angular.project.nodeinstallation>src/main/resources/test-app</angular.project.nodeinstallation>
     </properties>
     <dependencies>
         <dependency>
@@ -48,7 +50,42 @@
                     </excludes>
                 </configuration>
             </plugin>
+
+
+
+            <!-- Plugin to copy the content of /angular/dist/ directory to output
+                directory (ie/ /target/transactionManager-1.0/) -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.4.2</version>
+                <executions>
+                    <execution>
+                        <id>default-copy-resources</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <overwrite>true</overwrite>
+                            <!-- This folder is the folder where your angular files
+                            will be copied to. It must match the resulting war-file name.
+                            So if you have customized the name of war-file for ex. as "app.war"
+                            then below value should be ${project.build.directory}/app/
+                            Value given below is as per default war-file name -->
+                            <outputDirectory>${project.build.directory}/${project.artifactId}-${project.version}/</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>${project.basedir}/${angular.project.location}/dist</directory>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
+
+
     </build>
 
 </project>
