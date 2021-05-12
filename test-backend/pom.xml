@@ -51,37 +51,35 @@
                 </configuration>
             </plugin>
 
-
-
-            <!-- Plugin to copy the content of /angular/dist/ directory to output
-                directory (ie/ /target/transactionManager-1.0/) -->
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
-                <version>2.4.2</version>
                 <executions>
                     <execution>
-                        <id>default-copy-resources</id>
-                        <phase>process-resources</phase>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
+                        <id>copy-resources</id>
+                        <phase>validate</phase>
+                        <goals><goal>copy-resources</goal></goals>
                         <configuration>
-                            <overwrite>true</overwrite>
-                            <!-- This folder is the folder where your angular files
-                            will be copied to. It must match the resulting war-file name.
-                            So if you have customized the name of war-file for ex. as "app.war"
-                            then below value should be ${project.build.directory}/app/
-                            Value given below is as per default war-file name -->
-                            <outputDirectory>${project.build.directory}/${project.artifactId}-${project.version}/</outputDirectory>
+                            <outputDirectory>${project.build.directory}/classes/resources/</outputDirectory>
                             <resources>
                                 <resource>
-                                    <directory>${project.basedir}/${angular.project.location}/dist</directory>
+                                    <directory>../test-frontend/dist/test-frontend/</directory>
                                 </resource>
                             </resources>
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
 
