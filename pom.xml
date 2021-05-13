@@ -43,7 +43,6 @@
         <spring.datasource.username>test</spring.datasource.username>
         <spring.datasource.password>test</spring.datasource.password>
         <spring.datasource.driver-class-name>com.mysql.cj.jdbc.Driver</spring.datasource.driver-class-name>
-
     </properties>
 
     <dependencies>
