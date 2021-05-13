@@ -1,22 +1,10 @@
-FROM node:10 as builder
+FROM nginx:alpine
 
+ENV PORT=8081
+EXPOSE 8081
+COPY test-frontend/dist/test-frontend /usr/share/nginx/html/
+COPY test-frontend/nginx/default.conf /etc/nginx/conf.d/default.conf.template
 
+RUN chown -R nginx /etc/nginx
 
-RUN cp ./test-frontend/package.json . && cp test-frontend/package-lock.json . && npm i && mv ./node_modules /test-frontend/
-
-WORKDIR /test-frontend
-## Build the angular app in production mode and store the artifacts in dist folder
-RUN $(npm bin)/ng build --prod --output-path=dist
-
-### STAGE 2: Setup ###
-FROM nginx:stable-alpine
-
-COPY ./nginx.conf /etc/nginx/conf.d/default.conf
-
-## Remove default nginx website
-RUN rm -rf /usr/share/nginx/html/*
-
-## From ‘builder’ stage copy over the artifacts in dist folder to default nginx public folder
-COPY --from=builder /test-frontend/dist /usr/share/nginx/html
-
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["/bin/sh","-c","envsubst '$PORT' < /etc/nginx/conf.d/default.conf.template > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"]

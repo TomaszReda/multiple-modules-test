@@ -1,20 +1,14 @@
 version: '3.3'
 services:
-
-        nginx:
-          restart: always
-          build:
-            context: .
-            dockerfile: nginx.dockerfile
-          expose:
-            - "80"
-          ports:
-            - "80:80"
-          depends_on:
-            - messaging-service
-            - notifications-service
-          networks:
-            - app-network
+    test-front:
+      build:
+        context: ../
+        dockerfile: ./docker-separate-module/front/Dockerfile
+      restart: always
+      ports:
+        - "8081:8081"
+#      links:
+#        - backend
 #    app:
 #      build:
 #        context: ../
