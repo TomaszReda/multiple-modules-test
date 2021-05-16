@@ -14,7 +14,7 @@
     <name>test-backend</name>
     <description>Demo project for Spring Boot</description>
     <properties>
-        <java.version>16</java.version>
+        <java.version>8</java.version>
             <angular.project.location>test-frontend</angular.project.location>
             <angular.project.nodeinstallation>src/main/resources/test-app</angular.project.nodeinstallation>
         <maven.compiler.source>8</maven.compiler.source>

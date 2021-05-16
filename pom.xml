@@ -37,8 +37,8 @@
     </profiles>
 
     <properties>
-        <maven.compiler.source>16</maven.compiler.source>
-        <maven.compiler.target>16</maven.compiler.target>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
         <spring.datasource.url>jdbc:mysql://localhost:3306/db-test</spring.datasource.url>
         <spring.datasource.username>test</spring.datasource.username>
         <spring.datasource.password>test</spring.datasource.password>

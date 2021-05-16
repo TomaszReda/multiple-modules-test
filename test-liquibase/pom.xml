@@ -40,8 +40,8 @@
         </dependency>
     </dependencies>
     <properties>
-        <maven.compiler.source>16</maven.compiler.source>
-        <maven.compiler.target>16</maven.compiler.target>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
         <liquibase.contexts>main</liquibase.contexts>
         <schema-update-phase>null</schema-update-phase>
     </properties>
