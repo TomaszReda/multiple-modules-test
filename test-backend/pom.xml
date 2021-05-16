@@ -14,11 +14,11 @@
     <name>test-backend</name>
     <description>Demo project for Spring Boot</description>
     <properties>
-        <java.version>8</java.version>
+        <java.version>16</java.version>
             <angular.project.location>test-frontend</angular.project.location>
             <angular.project.nodeinstallation>src/main/resources/test-app</angular.project.nodeinstallation>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
+        <maven.compiler.source>16</maven.compiler.source>
+        <maven.compiler.target>16</maven.compiler.target>
         <spring.datasource.url>jdbc:mysql://localhost:3306/db-test</spring.datasource.url>
         <spring.datasource.username>test</spring.datasource.username>
         <spring.datasource.password>test</spring.datasource.password>
