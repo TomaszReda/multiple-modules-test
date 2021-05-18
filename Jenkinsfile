@@ -1,8 +1,26 @@
 pipeline {
  agent any
-  parameters {
-    gitParameter branchFilter: 'origin/(.*)', defaultValue: 'develop', name: 'BRANCH', type: 'PT_BRANCH'
-  }
+
+ stages {
+        stage('Setup parameters') {
+            steps {
+                script {
+                    properties([
+                        parameters([
+                            choice(
+                                choices: ['dev', 'prod'],
+                                defaultValue: 'dev',
+                                name: 'PROFIL'
+                            ),
+                            string(
+                                defaultValue: 'master',
+                                name: 'BRANCH',
+                            )
+                        ])
+                    ])
+                }
+            }
+        }
 
     stages {
         stage('Cloning our Git') {
