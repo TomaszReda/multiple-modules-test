@@ -13,7 +13,7 @@ pipeline {
                                     name: 'PROFILES'
                                 ),
                                 string(
-                                    defaultValue: 'master',
+                                    defaultValue: 'develop',
                                     name: 'BRANCH',
                                 )
                             ])
