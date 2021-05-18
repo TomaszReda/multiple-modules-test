@@ -25,7 +25,7 @@ pipeline {
     stages {
         stage('Cloning our Git') {
             steps {
-                 git branch: "${params.BRANCH}",url: 'https://github.com/TomaszReda/multiple-modules-test'
+                 git branch: "origin/${params.BRANCH}",url: 'https://github.com/TomaszReda/multiple-modules-test'
             }
         }
         stage('Build application') {
