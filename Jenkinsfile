@@ -1,7 +1,7 @@
 pipeline {
  agent any
   parameters {
-    gitParameter defaultValue: 'origin/develop', name: 'BRANCH', type: 'PT_BRANCH'
+    gitParameter branchFilter: '(.*)', defaultValue: 'origin/develop', name: 'BRANCH', type: 'PT_BRANCH'
   }
 
     stages {
