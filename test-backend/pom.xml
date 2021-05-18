@@ -15,14 +15,10 @@
     <description>Demo project for Spring Boot</description>
     <properties>
         <java.version>16</java.version>
-            <angular.project.location>test-frontend</angular.project.location>
-            <angular.project.nodeinstallation>src/main/resources/test-app</angular.project.nodeinstallation>
+        <angular.project.location>test-frontend</angular.project.location>
+        <angular.project.nodeinstallation>src/main/resources/test-app</angular.project.nodeinstallation>
         <maven.compiler.source>16</maven.compiler.source>
         <maven.compiler.target>16</maven.compiler.target>
-        <spring.datasource.url>jdbc:mysql://localhost:3306/db-test</spring.datasource.url>
-        <spring.datasource.username>test</spring.datasource.username>
-        <spring.datasource.password>test</spring.datasource.password>
-        <spring.datasource.driver-class-name>com.mysql.cj.jdbc.Driver</spring.datasource.driver-class-name>
   </properties>
     <dependencies>
         <dependency>
@@ -39,12 +35,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <scope>runtime</scope>
         </dependency>
     </dependencies>
     <build>
