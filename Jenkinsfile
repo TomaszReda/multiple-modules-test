@@ -3,24 +3,25 @@ pipeline {
 
  stages {
         stage('Setup parameters') {
-            steps {
-                script {
-                    properties([
-                        parameters([
-                            choice(
-                                choices: ['dev', 'prod'],
-                                defaultValue: 'dev',
-                                name: 'PROFILES'
-                            ),
-                            string(
-                                defaultValue: 'master',
-                                name: 'BRANCH',
-                            )
+                steps {
+                    script {
+                        properties([
+                            parameters([
+                                choice(
+                                    choices: ['dev', 'prod'],
+                                    defaultValue: 'dev',
+                                    name: 'PROFILES'
+                                ),
+                                string(
+                                    defaultValue: 'master',
+                                    name: 'BRANCH',
+                                )
+                            ])
                         ])
-                    ])
+                    }
                 }
             }
-        }
+         }
 
     stages {
         stage('Cloning our Git') {
