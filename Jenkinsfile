@@ -1,8 +1,8 @@
 pipeline {
  agent any
 
- stages {
-        stage('Setup parameters') {
+    stages {
+         stage('Setup parameters') {
                 steps {
                     script {
                         properties([
@@ -21,9 +21,6 @@ pipeline {
                     }
                 }
             }
-         }
-
-    stages {
         stage('Cloning our Git') {
             steps {
                  git branch: "origin/${params.BRANCH}",url: 'https://github.com/TomaszReda/multiple-modules-test'
