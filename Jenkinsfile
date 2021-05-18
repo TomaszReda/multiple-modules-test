@@ -1,10 +1,13 @@
 pipeline {
+ agent any
+  parameters {
+    gitParameter branchFilter: 'origin/(.*)', defaultValue: 'develop', name: 'BRANCH', type: 'PT_BRANCH'
+  }
 
-    agent any
     stages {
         stage('Cloning our Git') {
             steps {
-                git 'https://github.com/TomaszReda/multiple-modules-test'
+                 git branch: "${params.BRANCH}",url: 'https://github.com/TomaszReda/multiple-modules-test'
             }
         }
         stage('Build application') {
