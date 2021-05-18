@@ -28,7 +28,7 @@ pipeline {
         }
         stage('Build application') {
             steps {
-                sh 'JAVA_HOME=/usr/lib/jvm/java-16-openjdk-16.0.1.0.9-1.rolling.el8.x86_64 mvn clean install -P${params.PROFILES}'
+                sh 'JAVA_HOME=/usr/lib/jvm/java-16-openjdk-16.0.1.0.9-1.rolling.el8.x86_64 mvn clean install -P'+params.PROFILES
             }
         }
         stage('Delete old version compose') {
