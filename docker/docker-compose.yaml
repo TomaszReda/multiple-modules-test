@@ -1,7 +1,7 @@
 version: '3.3'
 services:
     app:
-      image: '2071996/multi-module-test:1'
+      image: '22071996/multi-module-test:1'
       build:
         context: ../
         dockerfile: ./docker/app/Dockerfile
