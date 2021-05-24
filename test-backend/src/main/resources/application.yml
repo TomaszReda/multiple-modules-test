@@ -4,6 +4,11 @@ spring:
     password: '@spring.datasource.password@'
     url: '@spring.datasource.url@'
     driver-class-name: '@spring.datasource.driver-class-name@'
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    show-sql: false
+    hibernate:
+      ddl-auto: none
 #management:
 #  metrics:
 #    export:
