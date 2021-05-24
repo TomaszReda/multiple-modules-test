@@ -17,6 +17,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/test-backend/src/main/resources/application.yml">
+          <value>
+            <Attribute>
+              <option name="separator" value=":" />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/test-liquibase/src/main/resources/db/1.0/01_test_create_table.sql">
           <value>
             <Attribute>

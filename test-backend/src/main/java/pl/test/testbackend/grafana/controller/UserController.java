@@ -8,8 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import pl.test.testbackend.grafana.dto.UserDto;
 import pl.test.testbackend.grafana.model.User;
 import pl.test.testbackend.grafana.serivce.UserServices;
-
-import java.util.function.Predicate;
+import com.querydsl.core.types.Predicate;
 
 
 @AllArgsConstructor
@@ -18,12 +17,10 @@ import java.util.function.Predicate;
 public class UserController {
     private final UserServices userServices;
 
-
     @GetMapping("/find")
     public ResponseEntity<Page<User>> getUsers(Pageable pageable, Predicate predicate) {
         return userServices.find(pageable, predicate);
     }
-
     @DeleteMapping("/delete/{id}")
     public ResponseEntity delete(@PathVariable long id) {
         return userServices.delete(id);

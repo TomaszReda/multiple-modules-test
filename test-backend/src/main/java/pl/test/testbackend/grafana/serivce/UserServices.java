@@ -13,7 +13,7 @@ import pl.test.testbackend.grafana.model.User;
 import pl.test.testbackend.grafana.repository.UserRepository;
 
 import java.util.Optional;
-import java.util.function.Predicate;
+import com.querydsl.core.types.Predicate;
 
 @Component
 @Service
@@ -41,7 +41,7 @@ public class UserServices {
         if (predicate == null) {
             return ResponseEntity.ok(userRepository.findAll(pageable));
         } else
-            return ResponseEntity.ok(userRepository.findAll(pageable, predicate));
+            return ResponseEntity.ok(userRepository.findAll(predicate, pageable));
     }
 
 }
