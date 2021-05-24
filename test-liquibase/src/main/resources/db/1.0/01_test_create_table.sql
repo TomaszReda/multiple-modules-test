@@ -1,6 +1,6 @@
-create table test
+create table user
 (
-    id bigint AUTO_INCREMENT,
-    first varchar(50),
-    PRIMARY KEY (id)
+    id bigint AUTO_INCREMENT primary key,
+    firstname varchar(50),
+    lastname varchar(50)
 )

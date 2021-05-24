@@ -1,5 +1,5 @@
-insert into test(first)
-values ('111'),
-       ('2222'),
-       ('33333'),
-       ('44444');
+insert into user(firstname, lastname)
+values ('test','test'),
+       ('cos','cos'),
+       ('ktos','ktos'),
+       ('ewa','cos');

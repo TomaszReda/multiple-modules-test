@@ -43,6 +43,8 @@
         <spring.datasource.username>test</spring.datasource.username>
         <spring.datasource.password>test</spring.datasource.password>
         <spring.datasource.driver-class-name>com.mysql.cj.jdbc.Driver</spring.datasource.driver-class-name>
+        <spring.metric.db.name>testdb</spring.metric.db.name>
+        <spring.metric.db.url>http://grafana:8086</spring.metric.db.url>
     </properties>
 
     <dependencies>
@@ -51,5 +53,6 @@
             <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
         </dependency>
+
     </dependencies>
 </project>

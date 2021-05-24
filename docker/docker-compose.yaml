@@ -52,6 +52,26 @@ services:
         - LIQUIBASE_CHANGELOG=/liquibase/changelog-master.xml
       networks:
         - test
+    grafana:
+      image: grafana/grafana:latest
+      ports:
+        - '3000:3000'
+      depends_on:
+        - influxdb
+      environment:
+        - GF_SECURITY_ADMIN_USER=grafana
+        - GF_SECURITY_ADMIN_PASSWORD=gafana
+    influxdb:
+      image: influxdb:latest
+      ports:
+        - '8086:8086'
+      environment:
+        INFLUXDB_HTTP_AUTH_ENABLED: "true"
+        INFLUXDB_USER: user
+        INFLUXDB_USER_PASSWORD: user
+        INFLUXDB_DB: testdb
+        INFLUXDB_ADMIN_USER: admin
+        INFLUXDB_ADMIN_PASSWORD: admin
 networks:
   test:
     external: true
