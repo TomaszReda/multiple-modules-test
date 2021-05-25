@@ -15,6 +15,10 @@ services:
         - SPRING_DATASOURCE_USERNAME=test
         - SPRING_DATASOURCE_PASSWORD=test
         - SPRING_DATASOURCE_DRIVER_CLASS_NAME=com.mysql.cj.jdbc.Driver
+        - MANAGEMENT_METRICS_EXPORT_INFLUX_DB=http://influxdb:8086
+        - MANAGEMENT_METRICS_EXPORT_INFLUX_URI=db0
+        - MANAGEMENT_METRICS_EXPORT_INFLUX_USER-name=admin
+        - MANAGEMENT_METRICS_EXPORT_INFLUX_PASSWORD=admin
       restart: unless-stopped
       depends_on:
         - db-test
@@ -61,18 +65,30 @@ services:
         - influxdb
       environment:
         - GF_SECURITY_ADMIN_USER=grafana
-        - GF_SECURITY_ADMIN_PASSWORD=gafana
+        - GF_SECURITY_ADMIN_PASSWORD=grafana
+      volumes:
+        - grafana-storage:/var/lib/influxdb
+        - ./grafana/:/etc/grafana/provisioning
+
+      networks:
+        - test
     influxdb:
-      image: influxdb:latest
+      container_name: influxdb
+      image: influxdb:1.7.10-alpine
       ports:
         - '8086:8086'
+      volumes:
+        - influxdb-storage:/var/lib/influxdb
+      networks:
+        - test
       environment:
-        INFLUXDB_HTTP_AUTH_ENABLED: "true"
-        INFLUXDB_USER: user
-        INFLUXDB_USER_PASSWORD: user
-        INFLUXDB_DB: testdb
-        INFLUXDB_ADMIN_USER: admin
-        INFLUXDB_ADMIN_PASSWORD: admin
+        - INFLUXDB_DB=db0
+        - INFLUXDB_ADMIN_USER=adminn
+        - INFLUXDB_ADMIN_PASSWORD=adminn
 networks:
   test:
     external: true
+
+volumes:
+  influxdb-storage:
+  grafana-storage:

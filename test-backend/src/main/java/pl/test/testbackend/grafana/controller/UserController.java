@@ -1,5 +1,6 @@
 package pl.test.testbackend.grafana.controller;
 
+import io.micrometer.core.annotation.Timed;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -14,6 +15,7 @@ import com.querydsl.core.types.Predicate;
 @AllArgsConstructor
 @RestController
 @RequestMapping("/api/user")
+@Timed
 public class UserController {
     private final UserServices userServices;
 
