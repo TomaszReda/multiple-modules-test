@@ -1,9 +1,12 @@
 apiVersion: 1
+
 providers:
-  - name: InfluxDB
+  - name: 'Prometheus'
+    orgId: 1
     folder: ''
     type: file
     disableDeletion: false
     editable: true
+    allowUiUpdates: true
     options:
-      path: /etc/grafana/provisioning/dashboards/artillery.json.example
+      path: /etc/grafana/provisioning/dashboards

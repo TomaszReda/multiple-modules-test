@@ -17,6 +17,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/docker/.env">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/docker/docker-compose.yaml">
           <value>
             <Attribute>

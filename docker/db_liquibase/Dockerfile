@@ -1,7 +1,7 @@
 FROM webdevops/liquibase
 
-ENV SCHEMA_JAR_DIR ./test-liquibase/target
-ENV SCHEMA_JAR test-liquibase-1.0-SNAPSHOT.jar
+ARG SCHEMA_JAR_DIR
+ARG SCHEMA_JAR
 ENV DOCKERIZE_VERSION v0.6.1
 
 RUN apt-get update && apt-get install -y wget && apt-get install -y dos2unix && rm -rf /var/lib/apt/lists/*

@@ -39,12 +39,12 @@
     <properties>
         <maven.compiler.source>16</maven.compiler.source>
         <maven.compiler.target>16</maven.compiler.target>
-        <spring.datasource.url>jdbc:mysql://localhost:3306/test-db</spring.datasource.url>
-        <spring.datasource.username>test</spring.datasource.username>
-        <spring.datasource.password>test</spring.datasource.password>
+        <spring.datasource.url>jdbc:mysql://localhost:3306/db-test</spring.datasource.url>
+        <spring.datasource.username>root</spring.datasource.username>
+        <spring.datasource.password>password</spring.datasource.password>
         <spring.datasource.driver-class-name>com.mysql.cj.jdbc.Driver</spring.datasource.driver-class-name>
         <spring.metric.db.name>db0</spring.metric.db.name>
-        <spring.metric.db.url>http://influxdb:8086</spring.metric.db.url>
+        <spring.metric.db.url>http://localhost:8086</spring.metric.db.url>
         <spring.metric.db.password>admin</spring.metric.db.password>
         <spring.metric.db.username>admin</spring.metric.db.username>
     </properties>
