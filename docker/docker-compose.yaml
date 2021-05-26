@@ -12,8 +12,8 @@ services:
         - 8080:8080
       environment:
         - SPRING_DATASOURCE_URL=jdbc:mysql://db-test:3306/db-test
-        - SPRING_DATASOURCE_USERNAME=root
-        - SPRING_DATASOURCE_PASSWORD=password
+        - SPRING_DATASOURCE_USERNAME=test
+        - SPRING_DATASOURCE_PASSWORD=test
         - SPRING_DATASOURCE_DRIVER_CLASS_NAME=com.mysql.cj.jdbc.Driver
         - MANAGEMENT_METRICS_EXPORT_INFLUX_DB=http://influxdb:8086
         - MANAGEMENT_METRICS_EXPORT_INFLUX_URI=db0
@@ -50,8 +50,8 @@ services:
       container_name: db-liquibase
       environment:
         - LIQUIBASE_URL=jdbc:mysql://db-test:3306/db-test
-        - LIQUIBASE_USERNAME=root
-        - LIQUIBASE_PASSWORD=password
+        - LIQUIBASE_USERNAME=test
+        - LIQUIBASE_PASSWORD=test
         - LIQUIBASE_DRIVER=com.mysql.cj.jdbc.Driver
         - LIQUIBASE_CLASSPATH=/mysql-connector-java-8.0.18.jar
         - LIQUIBASE_CHANGELOG=/liquibase/changelog-master.xml
