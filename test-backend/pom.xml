@@ -128,29 +128,7 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>aspectj-maven-plugin</artifactId>
-                <version>1.8</version>
-                <configuration>
-                    <complianceLevel>16</complianceLevel>
-                    <source>16</source>
-                    <target>16</target>
-                    <aspectLibraries>
-                        <aspectLibrary>
-                            <groupId>io.astefanutti.metrics.aspectj</groupId>
-                            <artifactId>metrics-aspectj</artifactId>
-                        </aspectLibrary>
-                    </aspectLibraries>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>compile</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
