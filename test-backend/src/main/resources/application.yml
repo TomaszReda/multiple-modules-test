@@ -17,6 +17,7 @@ management:
         uri: '@spring.metric.db.url@'
         user-name: '@spring.metric.db.username@'
         password:   '@spring.metric.db.password@'
+        auto-create-db: true
   endpoints:
     web:
       exposure:

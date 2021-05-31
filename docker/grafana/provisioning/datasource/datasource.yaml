@@ -7,5 +7,13 @@ datasources:
     user: admin
     password: admin
     url: http://influxdb:8086
+    isDefault: false
+    editable: true
+  - name: Prometheus
+    type: prometheus
+    access: proxy
+    orgId: 1
+    url: http://prometheus:9090
+    basicAuth: false
     isDefault: true
     editable: true

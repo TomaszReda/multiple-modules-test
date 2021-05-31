@@ -1,7 +1,7 @@
 version: '3.3'
 services:
     app:
-      image: '22071996/multi-module-test:1'
+      image: '22071996/multi-module-test:3'
       build:
         context: ../
         dockerfile: ./docker/app/Dockerfile
@@ -15,8 +15,8 @@ services:
         - SPRING_DATASOURCE_USERNAME=test
         - SPRING_DATASOURCE_PASSWORD=test
         - SPRING_DATASOURCE_DRIVER_CLASS_NAME=com.mysql.cj.jdbc.Driver
-        - MANAGEMENT_METRICS_EXPORT_INFLUX_DB=http://influxdb:8086
-        - MANAGEMENT_METRICS_EXPORT_INFLUX_URI=db0
+        - MANAGEMENT_METRICS_EXPORT_INFLUX_DB=db0
+        - MANAGEMENT_METRICS_EXPORT_INFLUX_URI=http://influxdb:8086
         - MANAGEMENT_METRICS_EXPORT_INFLUX_USER-name=admin
         - MANAGEMENT_METRICS_EXPORT_INFLUX_PASSWORD=admin
       restart: unless-stopped
