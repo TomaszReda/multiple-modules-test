@@ -9,15 +9,12 @@ spring:
     show-sql: false
     hibernate:
       ddl-auto: none
-management:
-  metrics:
-    export:
-      influx:
-        db: '@spring.metric.db.name@'
-        uri: '@spring.metric.db.url@'
-        user-name: '@spring.metric.db.username@'
-        password:   '@spring.metric.db.password@'
-        auto-create-db: true
+  mail:
+    host: '@mail.host@'
+    port: '@mail.port@'
+    password: '@mail.password@'
+    username: '@mail.username@'
+    test-connection: '@mail.test.connection@'
   endpoints:
     web:
       exposure:

@@ -47,6 +47,11 @@
         <spring.metric.db.url>http://localhost:8086</spring.metric.db.url>
         <spring.metric.db.password>admin</spring.metric.db.password>
         <spring.metric.db.username>admin</spring.metric.db.username>
+        <mail.host>http://localhost</mail.host>
+        <mail.port>1025</mail.port>
+        <mail.password></mail.password>
+        <mail.username></mail.username>
+        <mail.test.connection>true</mail.test.connection>
     </properties>
 
     <dependencies>

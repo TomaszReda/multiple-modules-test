@@ -19,6 +19,12 @@ services:
         - MANAGEMENT_METRICS_EXPORT_INFLUX_URI=http://influxdb:8086
         - MANAGEMENT_METRICS_EXPORT_INFLUX_USER-name=admin
         - MANAGEMENT_METRICS_EXPORT_INFLUX_PASSWORD=admin
+        - MANAGEMENT_METRICS_EXPORT_INFLUX_ENABLED=true
+        - SPRING_MAIL_HOST=http://mailhog
+        - SPRING_MAIL_PORT=1025
+        - SPRING_MAIL_USERNAME=
+        - SPRING_MAIL_PASSSWORD=
+        - SPRING_MAIL_TEST_CONNECTION=true
       restart: unless-stopped
       depends_on:
         - db-test
@@ -93,6 +99,15 @@ services:
         - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
       ports:
         - "9090:9090"
+      networks:
+        - test
+    mailhog:
+      image: mailhog/mailhog
+      logging:
+        driver: 'none'  # disable saving logs
+      ports:
+        - 1025:1025 # smtp server
+        - 8025:8025 # web ui
       networks:
         - test
 networks:
