@@ -26,12 +26,14 @@
             <id>dev</id>
             <properties>
                 <maven.test.skip>true</maven.test.skip>
+                <spring.enable.metrict>false</spring.enable.metrict>
             </properties>
         </profile>
         <profile>
             <id>prod</id>
             <properties>
                 <maven.test.skip>true</maven.test.skip>
+                <spring.enable.metrict>true</spring.enable.metrict>
             </properties>
         </profile>
     </profiles>

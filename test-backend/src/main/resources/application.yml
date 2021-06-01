@@ -15,6 +15,15 @@ spring:
     password: '@mail.password@'
     username: '@mail.username@'
     test-connection: '@mail.test.connection@'
+management:
+  metrics:
+    export:
+      influx:
+        db: '@spring.metric.db.name@'
+        uri: '@spring.metric.db.url@'
+        user-name: '@spring.metric.db.username@'
+        password: '@spring.metric.db.password@'
+        enabled: '@spring.enable.metrict@'
   endpoints:
     web:
       exposure:
