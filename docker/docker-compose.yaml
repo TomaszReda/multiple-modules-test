@@ -125,7 +125,7 @@ services:
       networks:
         - test
       volumes:
-        - rabbitmq-storage:/etc/rabbitmq/
+        - rabbitmq-storage:/var/lib/rabbitmq
 networks:
   test:
     external: true
