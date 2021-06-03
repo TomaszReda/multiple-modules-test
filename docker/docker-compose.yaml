@@ -27,7 +27,7 @@ services:
         - SPRING_MAIL_TEST_CONNECTION=true
         - SPIRNG_RABBITMQ_USERNAME=user
         - SPRING_RABBITMQ_PASSWORD=password
-        - SPRING_RABBITMQ_HOST=http://rabbitmq
+        - SPRING_RABBITMQ_HOST=rabbitmq
         - SPRING_RABBITMQ_PORT=5672
       restart: unless-stopped
       depends_on:
