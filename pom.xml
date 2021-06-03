@@ -54,6 +54,10 @@
         <mail.password></mail.password>
         <mail.username></mail.username>
         <mail.test.connection>true</mail.test.connection>
+        <rabbitmq.port>5672</rabbitmq.port>
+        <rabbitmq.host>localhost</rabbitmq.host>
+        <rabbitmq.username>user</rabbitmq.username>
+        <rabbitmq.password>password</rabbitmq.password>
     </properties>
 
     <dependencies>

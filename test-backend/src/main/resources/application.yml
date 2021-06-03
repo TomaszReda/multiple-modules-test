@@ -15,6 +15,11 @@ spring:
     password: '@mail.password@'
     username: '@mail.username@'
     test-connection: '@mail.test.connection@'
+  rabbitmq:
+    host: '@rabbitmq.host@'
+    username: '@rabbitmq.username@'
+    password: '@rabbitmq.password@'
+    port: '@rabbitmq.port@'
 management:
   metrics:
     export:
