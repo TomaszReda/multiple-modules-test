@@ -21,7 +21,7 @@ RUN pwd
 RUN unzip  /liquibase/$SCHEMA_JAR
 RUN rm /liquibase/liquibase.properties
 
-COPY ./docker/db_liquibase/mysql-connector-java-8.0.18.jar /
+COPY ./docker/db_liquibase/mysql-connector-java-8.0.25.jar /
 
 WORKDIR /liquibase
 CMD /waitOnDbAndRunLiquibase.sh

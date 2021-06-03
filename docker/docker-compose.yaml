@@ -63,7 +63,7 @@ services:
         - LIQUIBASE_USERNAME=test
         - LIQUIBASE_PASSWORD=test
         - LIQUIBASE_DRIVER=com.mysql.cj.jdbc.Driver
-        - LIQUIBASE_CLASSPATH=/mysql-connector-java-8.0.18.jar
+        - LIQUIBASE_CLASSPATH=/mysql-connector-java-8.0.25.jar
         - LIQUIBASE_CHANGELOG=/liquibase/changelog-master.xml
       networks:
         - test
