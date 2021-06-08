@@ -27,6 +27,7 @@
             <properties>
                 <maven.test.skip>true</maven.test.skip>
                 <spring.enable.metrict>false</spring.enable.metrict>
+                <logging.config>classpath:logback-dev.xml</logging.config>
             </properties>
         </profile>
         <profile>
@@ -34,6 +35,7 @@
             <properties>
                 <maven.test.skip>true</maven.test.skip>
                 <spring.enable.metrict>true</spring.enable.metrict>
+                <logging.config>classpath:logback-prod.xml</logging.config>
             </properties>
         </profile>
     </profiles>
@@ -58,6 +60,11 @@
         <rabbitmq.host>localhost</rabbitmq.host>
         <rabbitmq.username>user</rabbitmq.username>
         <rabbitmq.password>password</rabbitmq.password>
+        <logstash.host>localhost</logstash.host>
+        <logstash.port>5000</logstash.port>
+        <elastic.search.host>localhost</elastic.search.host>
+        <elastic.search.username>elastic</elastic.search.username>
+        <elastic.search.password>changeme</elastic.search.password>
     </properties>
 
     <dependencies>

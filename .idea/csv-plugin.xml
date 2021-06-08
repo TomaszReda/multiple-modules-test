@@ -31,10 +31,31 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/docker/elasticsearch_mapping_init/Dockerfile">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/docker/logstash/pipeline/logstash.conf">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/test-backend/src/main/resources/application.yml">
           <value>
             <Attribute>
               <option name="separator" value=":" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/test-backend/src/main/resources/logback-prod.xml">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
             </Attribute>
           </value>
         </entry>

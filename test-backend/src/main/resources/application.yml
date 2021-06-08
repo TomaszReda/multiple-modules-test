@@ -35,3 +35,12 @@ management:
         include: "*"
     prometheus:
       enabled: true
+logging:
+  config: '@logging.config@'
+logstash:
+  host: '@logstash.host@'
+  port: '@logstash.port@'
+elasticsearch:
+  host: '@elastic.search.host@'
+  username: '@elastic.search.username@'
+  password: '@elastic.search.password@'
