@@ -8,6 +8,14 @@
     <springProperty scope="local" name="logstash_host" source="logstash.host"/>
     <springProperty scope="local" name="logstash_port" source="logstash.port"/>
 
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+    <file>/var/test/logs/test.log</file>
+    <append>true</append>
+    <encoder>
+        <pattern>%-4relative [%thread] %-5level %logger{35} - %msg %n</pattern>
+    </encoder>
+    </appender>
+
     <appender name="logstash" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
         <param name="Encoding" value="UTF-8"/>
         <remoteHost>${logstash_host}</remoteHost>
@@ -15,7 +23,15 @@
         <encoder class="net.logstash.logback.encoder.LogstashEncoder"/>
     </appender>
 
-    <root level="DEBUG">
+    <appender name="jsonConsoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder"/>
+    </appender>
+
+
+    <root level="INFO">
         <appender-ref ref="logstash"/>
+        <appender-ref ref="jsonConsoleAppender"/>
+        <appender-ref ref="FILE"/>
+
     </root>
 </configuration>
