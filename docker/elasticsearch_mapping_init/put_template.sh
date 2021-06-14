@@ -1,40 +1,47 @@
-curl -XPUT -H "Content-Type: application/json" -k --user elastic:changeme  https://elasticsearch:9200/_template/blog -d '
-{
-  "blog" : {
+curl -XPUT -H "Content-Type: application/json" -k --user elastic:changeme  http://elasticsearch:9200/_template/blog -d '{
+  "index_patterns": ["blog"],
     "mappings" : {
       "properties" : {
         "_class" : {
-          "type" : "keyword",
-          "index" : false,
-          "doc_values" : false
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
         },
         "authors" : {
-          "type" : "nested",
-          "include_in_parent" : true,
           "properties" : {
-            "_class" : {
-              "type" : "keyword",
-              "index" : false,
-              "doc_values" : false
-            },
             "name" : {
-              "type" : "text"
+              "type" : "text",
+              "fields" : {
+                "keyword" : {
+                  "type" : "keyword",
+                  "ignore_above" : 256
+                }
+              }
             }
           }
         },
         "tags" : {
-          "type" : "keyword"
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
         },
         "title" : {
           "type" : "text",
           "fields" : {
-            "verbatim" : {
-              "type" : "keyword"
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
             }
-          },
-          "fielddata" : true
+          }
         }
       }
     }
-  }
-}
+}'

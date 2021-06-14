@@ -14,8 +14,8 @@ import java.util.UUID;
 public class ArticleService {
     private final ArticleRepository articleRepository;
 
-    public Page<Article> findByAuthorsName(String name, Pageable pageable) {
-        return articleRepository.findByAuthorsName(name, pageable);
+    public Page<Article> findArticleByTags(String tag, Pageable pageable) {
+        return articleRepository.findArticleByTags(tag, pageable);
     }
 
     public Page<Article> findByAuthorsNameUsingCustomQuery(String name, Pageable pageable) {

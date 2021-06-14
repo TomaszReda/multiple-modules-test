@@ -31,7 +31,7 @@ services:
         - SPRING_RABBITMQ_PORT=5672
         - LOGSTASH_HOST=logstash
         - LOGSTASH_PORT=5000
-        - ELASTIC_SEARC_HOST=elasticsearch
+        - ELASTIC_SEARCH_HOST=elasticsearch
         - ELASTIC_SEARCH_USERNAME=elastic
         - ELASTIC_SEARCH_PASSWORD=changeme
       restart: unless-stopped

@@ -11,7 +11,7 @@ import pl.test.testbackend.elasticsearch.model.Article;
 @Repository
 public interface ArticleRepository extends ElasticsearchRepository<Article, String> {
 
-    Page<Article> findByAuthorsName(String name, Pageable pageable);
+    Page<Article> findArticleByTags(String tag, Pageable pageable);
 
     @Query("{\"bool\": {\"must\": [{\"match\": {\"authors.name\": \"?0\"}}]}}")
     Page<Article> findByAuthorsNameUsingCustomQuery(String name, Pageable pageable);

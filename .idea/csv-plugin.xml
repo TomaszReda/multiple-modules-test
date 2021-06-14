@@ -38,6 +38,20 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/docker/elasticsearch_mapping_init/docker-entrypoint.sh">
+          <value>
+            <Attribute>
+              <option name="separator" value=":" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/docker/elasticsearch_mapping_init/put_template.sh">
+          <value>
+            <Attribute>
+              <option name="separator" value=":" />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/docker/logstash/pipeline/logstash.conf">
           <value>
             <Attribute>
