@@ -34,11 +34,27 @@ services:
         - ELASTICSEARCH_HOST=elasticsearch
         - ELASTICSEARCH_USERNAME=elastic
         - ELASTICSEARCH_PASSWORD=changeme
+      labels:
+        collect_logs_with_filebeat: "true"
+        decode_log_event_to_json_object: "true"
       restart: unless-stopped
       depends_on:
         - db-test
       links:
         - db-test
+      networks:
+        - test
+    filebeat:
+      build:
+        context: ./filebeat
+        dockerfile: ./Dockerfile
+      container_name: filebeat
+      volumes:
+        - /var/lib/docker/containers:/var/lib/docker/containers:ro           # Docker logs
+        - /var/run/docker.sock:/var/run/docker.sock:ro                       # Additional information about containers
+      user: root                                                             # Allow access to log files and docker.sock
+      depends_on:
+        - logstash
       networks:
         - test
     db-test:
@@ -188,19 +204,6 @@ services:
       depends_on:
         - elasticsearch
         - logstash
-#    filebeat:
-#      build:
-#        context: ./filebeat
-#        dockerfile: ./Dockerfile
-#      container_name: filebeat
-#      volumes:
-#        - /var/lib/docker/containers:/var/lib/docker/containers:ro           # Docker logs
-#        - /var/run/docker.sock:/var/run/docker.sock:ro                       # Additional information about containers
-#      user: root                                                             # Allow access to log files and docker.sock
-#      depends_on:
-#        - logstash
-#      networks:
-#        - test
     logstash:
       image: logstash:$ELK_VERSION
       ports:
