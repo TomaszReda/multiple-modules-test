@@ -8,7 +8,7 @@ pipeline {
                         properties([
                             parameters([
                                 choice(
-                                    choices: ['dev', 'prod'],
+                                    choices: ['prod','dev'],
                                     defaultValue: 'prod',
                                     name: 'PROFILES'
                                 ),
