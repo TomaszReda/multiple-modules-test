@@ -15,19 +15,18 @@ import static net.logstash.logback.argument.StructuredArguments.kv;
 @Slf4j
 public class LoggingService {
 
-
     public void log(LogType logType, Article article) {
         List<StructuredArgument> structuredArguments = structuredArguments(logType, article);
-        log.info("info", structuredArguments);
+        log.info("info", structuredArguments.toArray());
     }
 
     private List<StructuredArgument> structuredArguments(LogType logType, Article article) {
         List<StructuredArgument> structuredArguments = new ArrayList<>();
         if (logType.equals(LogType.BLOG)) {
             structuredArguments.add(kv("log_type", "blog"));
-
         }
-        structuredArguments.add(kv("author", article.getAuthors().toString()));
+
+        structuredArguments.add(kv("authors", article.getAuthors()));
         structuredArguments.add(kv("tags", article.getTags()));
         structuredArguments.add(kv("title", article.getTitle()));
         return structuredArguments;

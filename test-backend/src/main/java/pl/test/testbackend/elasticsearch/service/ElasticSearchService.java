@@ -27,7 +27,7 @@ public class ElasticSearchService {
         Article article = new Article();
         Author author = new Author(dtoBlogRequest.getAuthor());
         article.setAuthors(Arrays.asList(author));
-        article.setTags(dtoBlogRequest.getTag());
+        article.setTags(dtoBlogRequest.getTags());
         article.setTitle(dtoBlogRequest.getTitle());
         loggingService.log(LogType.BLOG, article);
     }
