@@ -1,5 +1,5 @@
-curl -XPUT -H "Content-Type: application/json" -k --user elastic:changeme  http://elasticsearch:9200/_template/blog -d '{
-  "index_patterns": ["blog"],
+curl -XPUT -H "Content-Type: application/json" -k --user elastic:changeme  http://elasticsearch:9200/_template/logstash-blog -d '{
+  "index_patterns": ["logstash-blog"],
     "mappings" : {
       "properties" : {
         "_class" : {

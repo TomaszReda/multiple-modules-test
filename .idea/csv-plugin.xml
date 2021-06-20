@@ -66,6 +66,20 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/test-backend/src/main/java/pl/test/testbackend/elasticsearch/DtoBlogRequest.java">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/test-backend/src/main/java/pl/test/testbackend/elasticsearch/service/LoggingService.java">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/test-backend/src/main/resources/application.yml">
           <value>
             <Attribute>

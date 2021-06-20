@@ -14,5 +14,5 @@ RUN chmod +x /put_template.sh
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
 #GET /_cat/indices
-#GET /blog/_mapping
-#GET /blog/_search
+#GET /logstash-blog/_mapping
+#GET /logstash-blog/_search

@@ -1,1 +1,1 @@
-curl -XPUT -k --user elastic:changeme http://elasticsearch:9200/blog
+curl -XPUT -k --user elastic:changeme http://elasticsearch:9200/logstash-blog

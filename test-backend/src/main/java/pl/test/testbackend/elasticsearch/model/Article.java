@@ -12,7 +12,7 @@ import java.util.List;
 import static org.springframework.data.elasticsearch.annotations.FieldType.*;
 
 @Data
-@Document(indexName = "blog")
+@Document(indexName = "logstash-blog")
 public class Article {
 
     @Id
