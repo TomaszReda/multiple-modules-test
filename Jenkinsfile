@@ -9,7 +9,7 @@ pipeline {
                             parameters([
                                 choice(
                                     choices: ['dev', 'prod'],
-                                    defaultValue: 'dev',
+                                    defaultValue: 'prod',
                                     name: 'PROFILES'
                                 ),
                                 string(
