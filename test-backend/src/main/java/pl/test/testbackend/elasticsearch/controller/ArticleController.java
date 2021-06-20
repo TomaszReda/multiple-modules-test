@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
+import pl.test.testbackend.elasticsearch.DtoBlogRequest;
 import pl.test.testbackend.elasticsearch.model.Article;
 import pl.test.testbackend.elasticsearch.service.ArticleService;
 
@@ -37,8 +38,8 @@ public class ArticleController {
     }
 
     @PostMapping("/save")
-    public Article saveArticle(@RequestBody Article article) {
-        return articleService.save(article);
+    public Article saveArticle(@RequestBody DtoBlogRequest dtoBlogRequest) {
+        return articleService.save(dtoBlogRequest);
     }
 
 

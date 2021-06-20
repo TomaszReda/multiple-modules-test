@@ -294,7 +294,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"title\": \"title\",\n    \"tags\": [\"tags\"],\n    \"authors\": [{\n        \"name\": \"name\"\n    }]\n}",
+					"raw": "{\n\"author\": \"authorrrr\",\n\"title\" : \"titleee\",\n\"tags\" : [\"asdada\",\"sadasdsa\"]\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -513,7 +513,12 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\"author\": \"authorrrr\",\n\"title\" : \"titleee\",\n\"tags\" : [\"asdada\",\"sadasdsa]\n}"
+					"raw": "{\n\"author\": \"authorrrr\",\n\"title\" : \"titleee\",\n\"tags\" : [\"asdada\",\"sadasdsa\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
 				},
 				"url": {
 					"raw": "{{host}}:8080/api/elasticsearch/blog",

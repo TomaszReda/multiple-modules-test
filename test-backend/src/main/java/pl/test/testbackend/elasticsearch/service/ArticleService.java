@@ -4,10 +4,12 @@ import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import pl.test.testbackend.elasticsearch.DtoBlogRequest;
 import pl.test.testbackend.elasticsearch.model.Article;
+import pl.test.testbackend.elasticsearch.model.Author;
 import pl.test.testbackend.elasticsearch.repository.ArticleRepository;
 
-import java.util.UUID;
+import java.util.Arrays;
 
 @Service
 @AllArgsConstructor
@@ -31,7 +33,12 @@ public class ArticleService {
         return articleRepository.findByAuthorsNameAndFilteredTagQuery(name, tag, pageable);
     }
 
-    public Article save(Article article) {
+    public Article save(DtoBlogRequest dtoBlogRequest) {
+        Article article = new Article();
+        Author author = new Author(dtoBlogRequest.getAuthor());
+        article.setAuthors(Arrays.asList(author));
+        article.setTags(dtoBlogRequest.getTags());
+        article.setTitle(dtoBlogRequest.getTitle());
         return articleRepository.save(article);
     }
 
