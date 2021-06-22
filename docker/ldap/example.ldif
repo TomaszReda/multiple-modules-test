@@ -50,7 +50,7 @@ objectclass: top
 sn: Gates
 uid: bgates
 uidnumber: 1000
-userpassword: {MD5}ICy5YqxZB1uWSwcVLSNLcA==
+userpassword: {MD5}05a671c66aefea124cc08b76ea6d30bb
 
 # Entry 8: uid=mcuban,ou=users,dc=mycompany,dc=com
 dn: uid=mcuban,ou=users,dc=mycompany,dc=com
@@ -79,6 +79,21 @@ sn: Jobs
 uid: sjobs
 uidnumber: 1001
 userpassword: {MD5}ICy5YqxZB1uWSwcVLSNLcA==
+
+
+# Entry 7: uid=bgates,ou=users,dc=mycompany,dc=com
+dn: uid=bgates,ou=users,dc=mycompany,dc=com
+cn: Bill Gates
+gidnumber: 500
+givenname: Bill
+homedirectory: /home/users/ben
+objectclass: inetOrgPerson
+objectclass: posixAccount
+objectclass: top
+sn: Gates
+uid: ben
+uidnumber: 1003
+userpassword: $2a$10$c6bSeWPhg06xB1lvmaWNNe4NROmZiSpYhlocU/98HNr2MhIOiSt36
 
 
 

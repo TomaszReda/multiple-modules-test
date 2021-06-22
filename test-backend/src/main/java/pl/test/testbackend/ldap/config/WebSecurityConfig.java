@@ -43,15 +43,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
         String url = String.format("%s/%s", ldapProperties.getUrls()[0], ldapProperties.getBase());
 
+        System.err.println(url);
         auth.ldapAuthentication()
-                .userDnPatterns(userDnPattern)
+                .userDnPatterns("uid={0}")
                 .contextSource()
-                .url(url)
-                .managerDn(ldapProperties.getUsername())
-                .managerPassword(ldapProperties.getPassword())
+                .url("ldap://localhost:389/ou=users,dc=mycompany,dc=com")
+                .managerDn("cn=admin,dc=mycompany,dc=com")
+                .managerPassword("admin")
                 .and()
                 .passwordCompare()
-                .passwordEncoder(new BCryptPasswordEncoder())
                 .passwordAttribute("userPassword");
     }
 
