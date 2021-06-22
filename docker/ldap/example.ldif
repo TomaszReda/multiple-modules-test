@@ -50,7 +50,7 @@ objectclass: top
 sn: Gates
 uid: bgates
 uidnumber: 1000
-userpassword: {MD5}05a671c66aefea124cc08b76ea6d30bb
+userpassword: $2a$04$xlTRsn8RibAVzwmRJ2CWxe8s1mNEOCDbTZRCbHoTO7Cg7L0hqtbZK
 
 # Entry 8: uid=mcuban,ou=users,dc=mycompany,dc=com
 dn: uid=mcuban,ou=users,dc=mycompany,dc=com
@@ -64,7 +64,7 @@ objectclass: top
 sn: Cuban
 uid: mcuban
 uidnumber: 1002
-userpassword: {MD5}ICy5YqxZB1uWSwcVLSNLcA==
+userpassword: $2a$04$xlTRsn8RibAVzwmRJ2CWxe8s1mNEOCDbTZRCbHoTO7Cg7L0hqtbZK
 
 # Entry 9: uid=sjobs,ou=users,dc=mycompany,dc=com
 dn: uid=sjobs,ou=users,dc=mycompany,dc=com
@@ -78,7 +78,7 @@ objectclass: top
 sn: Jobs
 uid: sjobs
 uidnumber: 1001
-userpassword: {MD5}ICy5YqxZB1uWSwcVLSNLcA==
+userpassword: $2a$04$xlTRsn8RibAVzwmRJ2CWxe8s1mNEOCDbTZRCbHoTO7Cg7L0hqtbZK
 
 
 # Entry 7: uid=bgates,ou=users,dc=mycompany,dc=com
@@ -93,7 +93,7 @@ objectclass: top
 sn: Gates
 uid: ben
 uidnumber: 1003
-userpassword: $2a$10$c6bSeWPhg06xB1lvmaWNNe4NROmZiSpYhlocU/98HNr2MhIOiSt36
+userpassword: $2a$04$xlTRsn8RibAVzwmRJ2CWxe8s1mNEOCDbTZRCbHoTO7Cg7L0hqtbZK
 
 
 

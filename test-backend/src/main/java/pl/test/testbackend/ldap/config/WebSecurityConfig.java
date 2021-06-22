@@ -21,9 +21,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Value("${ldap.userDnPattern}")
     private String userDnPattern;
 
-    @Value("${ldap.groupSearch}")
-    private String groupSearch;
-
     public WebSecurityConfig(LdapProperties ldapProperties) {
         this.ldapProperties = ldapProperties;
     }
@@ -34,6 +31,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.GET, "/api/ldap").authenticated()
                 .anyRequest().permitAll()
                 .and()
+                .httpBasic()
+                .and()
                 .formLogin();
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         http.cors().and().csrf().disable();
@@ -42,16 +41,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
         String url = String.format("%s/%s", ldapProperties.getUrls()[0], ldapProperties.getBase());
-
-        System.err.println(url);
         auth.ldapAuthentication()
-                .userDnPatterns("uid={0}")
+                .userDnPatterns(userDnPattern)
                 .contextSource()
-                .url("ldap://localhost:389/ou=users,dc=mycompany,dc=com")
-                .managerDn("cn=admin,dc=mycompany,dc=com")
-                .managerPassword("admin")
+                .url(url)
+                .managerDn(ldapProperties.getUsername())
+                .managerPassword(ldapProperties.getPassword())
                 .and()
                 .passwordCompare()
+                .passwordEncoder(new BCryptPasswordEncoder())
                 .passwordAttribute("userPassword");
     }
 

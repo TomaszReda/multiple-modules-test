@@ -68,8 +68,8 @@
         <ldap.user>cn=admin,dc=mycompany,dc=com</ldap.user>
         <ldap.password>admin</ldap.password>
         <ldap.url>ldap://localhost:389</ldap.url>
-        <ldap.base>dc=mycompany,dc=com</ldap.base>
-        <ldap.userDnPAttern>dc=mycompany,dc=com</ldap.userDnPAttern>
+        <ldap.base>ou=users,dc=mycompany,dc=com</ldap.base>
+        <ldap.userDnPattern>uid={0}</ldap.userDnPattern>
 
     </properties>
 

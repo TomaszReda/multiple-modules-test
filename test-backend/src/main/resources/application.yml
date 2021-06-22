@@ -26,8 +26,7 @@ spring:
     username: '@ldap.user@'
     password: '@ldap.password@'
 ldap:
-  userDnPattern: '@ldap.userDnPAttern@'
-  groupSearch: '@group.search@'
+  userDnPattern: '@ldap.userDnPattern@'
 management:
   metrics:
     export:
