@@ -20,6 +20,14 @@ spring:
     username: '@rabbitmq.username@'
     password: '@rabbitmq.password@'
     port: '@rabbitmq.port@'
+  ldap:
+    urls: '@ldap.url@'
+    base: '@ldap.base@'
+    username: '@ldap.user@'
+    password: '@ldap.password@'
+ldap:
+  userDnPattern: '@ldap.userDnPAttern@'
+  groupSearch: '@group.search@'
 management:
   metrics:
     export:

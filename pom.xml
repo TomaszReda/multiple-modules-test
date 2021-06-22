@@ -65,6 +65,13 @@
         <elastic.search.host>localhost</elastic.search.host>
         <elastic.search.username>elastic</elastic.search.username>
         <elastic.search.password>changeme</elastic.search.password>
+        <ldap.user>cn=admin,dc=mycompany,dc=com</ldap.user>
+        <ldap.password>admin</ldap.password>
+        <ldap.url>ldap://localhost:389</ldap.url>
+        <ldap.base>dc=mycompany,dc=com</ldap.base>
+        <ldap.userDnPAttern>ou=users,dc=mycompany,dc=com"</ldap.userDnPAttern>
+        <group.search>ou=groups</group.search>
+
     </properties>
 
     <dependencies>
