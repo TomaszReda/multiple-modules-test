@@ -234,6 +234,8 @@ services:
         - "389:389"
       networks:
         - test
+      volumes:
+        - ldap:/var/lib/ldap
     phpldapadmin:
       image: osixia/phpldapadmin:0.9.0
       container_name: phpldapadmin
@@ -255,3 +257,4 @@ volumes:
   grafana-storage:
   prometheus_data:
   elasticsearch:
+  ldap:
