@@ -34,6 +34,11 @@ services:
         - ELASTICSEARCH_HOST=elasticsearch
         - ELASTICSEARCH_USERNAME=elastic
         - ELASTICSEARCH_PASSWORD=changeme
+        - LDAP_URL=ldap://openldap:389
+        - LDAP_PASSWORD=admin
+        - LDAP_USER=cn=admin,dc=mycompany,dc=com
+        - LDAP_BASE=ou=users,dc=mycompany,dc=com
+        - LDAP_USER_DN_PATTERN=uid={0}
       labels:
         collect_logs_with_filebeat: "true"
         decode_log_event_to_json_object: "true"
