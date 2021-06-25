@@ -59,6 +59,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/docker/ldap-init-data/ldap-data.ldif">
+          <value>
+            <Attribute>
+              <option name="separator" value=":" />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/docker/logstash/pipeline/logstash.conf">
           <value>
             <Attribute>
