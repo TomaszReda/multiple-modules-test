@@ -43,7 +43,7 @@ pipeline {
         }
         stage('Deploy to staging') {
              steps {
-                sh 'cd docker;docker-compose up -d'
+                sh 'cd docker;docker-compose up -d app db-test db-liquibase rabbitmq elasticsearch elasticsearch-test-data openldap'
              }
         }
     }
